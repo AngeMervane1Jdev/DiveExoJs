@@ -96,9 +96,13 @@ $(document).ready(function () {
       let achievement = get_achievement();
       // 変数「pass_or_failure」に「get_pass_or_failure()の戻り値」を代入します。
       let pass_or_failure = get_pass_or_failure();
+      let result="あなたの成績は"+achievement+" です。"+pass_or_failure+" です。"
       // 「最終ジャッジ」(id="alert-indicate)ボタンを押したら「あなたの成績は${achievement}です。${pass_or_failure}です。」が出力される処理です。
       if(!document.getElementById('alert-indicate')){
-      $('#declaration').append(`<label id="alert-indicate" class="alert alert-info">あなたの成績は${achievement}です。${pass_or_failure}です。</label>`);
+      $('#declaration').append(`<label id="alert-indicate" class="alert alert-info">あなたの成績は ${achievement} です。${pass_or_failure} です。</label>`);
+      }
+      else{
+        $('#alert-indicate').text(result);
       }
     };
 
